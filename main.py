@@ -2,7 +2,7 @@ import nmap
 import socket
 
 def get_local_ip():
-    """Get the local IP address of the machine."""
+    """Get the local IP address of the machine you are using."""
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.connect(("8.8.8.8", 80))
@@ -14,7 +14,7 @@ def get_local_ip():
         return "127.0.0.1"
 
 def scan_host(ip):
-    """Scan the host using Nmap and look for vulnerabilities."""
+    """Scan the machine using Nmap and look for vulnerabilities."""
     print(f"\n[+] Scanning {ip} for open ports and known vulnerabilities...\n")
     scanner = nmap.PortScanner()
 
